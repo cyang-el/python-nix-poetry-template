@@ -12,4 +12,4 @@ COPY Makefile /app/Makefile
 COPY poetry_install.sh /app/poetry_install.sh
 
 WORKDIR /app
-RUN nix-shell --command "poetry install --no-dev"
+RUN nix-shell --command "poetry install"

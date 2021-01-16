@@ -6,5 +6,15 @@ services:
       dockerfile: Dockerfile-main
     volumes:
       - ./some_app:/app/some_app
-    # ports:
-    #   - "8000:8000"
+    ports:
+      - "8000:8000"
+    working_dir: /app
+    command: nix-shell --command "make nix-run"
+  test:
+    build:
+      context: ./
+      dockerfile: Dockerfile-test
+    volumes:
+      - ./some_app:/app/some_app
+    working_dir: /app
+    command: nix-shell --command "make nix-test"
