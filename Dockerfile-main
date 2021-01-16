@@ -1,0 +1,16 @@
+FROM nixos/nix:2.3.6
+
+RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+RUN nix-channel --update
+
+RUN mkdir /app
+
+COPY pyproject.toml /app/pyproject.toml
+COPY poetry.lock /app/poetry.lock
+COPY shell.nix /app/shell.nix
+COPY default.nix /app/default.nix
+COPY some_app /app/some_app
+
+WORKDIR /app
+RUN nix-shell
+RUN nix-build

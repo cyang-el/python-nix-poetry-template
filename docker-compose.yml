@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile-main
+    volumes:
+      - ./some_app:/app/some_app
+    # ports:
+    #   - "8000:8000"

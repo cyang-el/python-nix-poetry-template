@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "some_app"
+version = "0.0.1"
+description = "A Python project template."
+authors = ["Cheng-Hsun Yang"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.790"
+pytest = "^6.2.1"
+flake8 = "^3.8.4"
+pre-commit = "^2.9.3"
+requests = "^2.25.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
