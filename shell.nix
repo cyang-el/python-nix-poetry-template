@@ -8,5 +8,8 @@ mkShell {
     pkgs.gnumake
     pkgs.python3
     pkgs.poetry
+    pkgs.mypy
+    pkgs.python38Packages.flake8
+    pkgs.python38Packages.pre-commit
   ];
 }
